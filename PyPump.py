@@ -350,7 +350,3 @@ class PyPump(object):
 
         return self.pump.open(request).read().decode("utf-8")
 
-if __name__ == "__main__":
-    pump = PyPump("Tsyesika@pump.megworld.co.uk", client_name="Muon")
-    print(pump.get_registration())
-    print(pump.get_token())
