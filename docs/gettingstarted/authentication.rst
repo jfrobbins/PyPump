@@ -1,5 +1,5 @@
 
-Intorudction
+Introduction
 =============
 
 Pump.io uses oauth 1.0 with dynamic client registration, this available through a lot of libraries, PyPump currently uses a modified version of `Leah Culver <https://github.com/leah/python-oauth/>`, the modified version is called `oauth3000 <https://github.com/xray7224/oauth3000>`. All of that is handled by PyPump however there are some things to know.
@@ -11,8 +11,8 @@ Example
 
 The following will create (for the first time) a connection to a pump.io server for the user Tsyesika@pump.megworld.co.uk for my client named "Test.io"::
 
-    >>> from PyPump.PyPump import PyPump
-    >>> pump = PyPump("Tsyesika@pump.megowrld.co.uk", client_name="Test.io", secure=True)
+    >>> from pypump import PyPump
+    >>> pump = PyPump("Tsyesika@pump.megowrld.co.uk", client_name="Test.io")
     >>> client_credentials = pump.get_registration() # will return [<client key>, <client secret>, <expirey>]
     >>> client_tokens = pump.get_token() # will return [<token>, <secret>]
 
@@ -26,6 +26,5 @@ An example of then connecting again (using the same variable names as above). Th
     ...          secret=client_credentials[1], # the client secret
     ...          token=client_tokens[0], # the token key
     ...          token_secret=client_tokens[1], # the token secret
-    ...          secure=True) # for using HTTPS
-
+    ...          )
  
